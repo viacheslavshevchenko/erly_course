@@ -1,5 +1,5 @@
 %%%-------------------------------------------------------------------
-%%% @author irish_man
+%%% @author irishman
 %%% @copyright (C) 2018, <COMPANY>
 %%% @doc
 %%%
@@ -7,7 +7,7 @@
 %%% Created : 01. Mar 2018 10:29 AM
 %%%-------------------------------------------------------------------
 -module(p02).
--author("irish_man").
+-author("irishman").
 
 %% API
 -export([but_last/1]).

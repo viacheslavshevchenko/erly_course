@@ -4,16 +4,16 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created : 01. Mar 2018 8:38 AM
+%%% Created : 02. Mar 2018 6:35 PM
 %%%-------------------------------------------------------------------
--module(p01).
+-module(p14).
 -author("irishman").
 
 %% API
--export([last/1]).
+-export([duplicate/1]).
 
 
-last([X]) ->
-  X;
-last([_|T]) ->
-  last(T).
+duplicate([]) ->
+  [];
+duplicate([H|T]) ->
+  [H|[H|duplicate(T)]].

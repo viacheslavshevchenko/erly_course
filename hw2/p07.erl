@@ -1,5 +1,5 @@
 %%%-------------------------------------------------------------------
-%%% @author irish_man
+%%% @author irishman
 %%% @copyright (C) 2018, <COMPANY>
 %%% @doc
 %%%
@@ -7,17 +7,17 @@
 %%% Created : 01. Mar 2018 10:44 AM
 %%%-------------------------------------------------------------------
 -module(p07).
--author("irish_man").
+-author("irishman").
 
 %% API
 -export([flatten/1]).
 
 
-flatten([[H|T1]|T2]) ->
-  flatten([H,T1|T2]);
+flatten([]) ->
+  [];
 flatten([[]|T]) ->
   flatten(T);
+flatten([[H|T]|T2]) ->
+  flatten([H,T|T2]);
 flatten([E|T]) ->
-  [E|flatten(T)];
-flatten([]) ->
-  [].
+  [E|flatten(T)].

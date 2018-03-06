@@ -1,5 +1,5 @@
 %%%-------------------------------------------------------------------
-%%% @author irish_man
+%%% @author irishman
 %%% @copyright (C) 2018, <COMPANY>
 %%% @doc
 %%%
@@ -7,24 +7,33 @@
 %%% Created : 02. Mar 2018 6:35 PM
 %%%-------------------------------------------------------------------
 -module(p08).
--author("irish_man").
+-author("irishman").
 
 %% API
--export([remove_duplicates/1]).
+-export([compress/1]).
 
 
+compress([])->
+  [];
+compress([H|[]])->
+  [H];
+compress([H|[H|T]])->
+  compress([H|T]);
+compress([H|[H1|T]])->
+  [H|compress([H1|T])].
 
-delete_all(Item, [Item | Rest_of_list]) ->
-  delete_all(Item, Rest_of_list);
-delete_all(Item, [Another_item| Rest_of_list]) ->
-  [Another_item | delete_all(Item, Rest_of_list)];
-delete_all(_, []) ->
-  [].
 
-remove_duplicates(L)->
-  removing(L,[]).
+% compress(L)->
+%   compress(L, []).
 
-removing([], Acc) ->
-  Acc;
-removing([H|Tail], Acc) ->
-  removing(delete_all(H,Tail), [H|Acc]).
+% compress([], Acc) ->
+%   tail_reverse(Acc);
+% compress([H|T], Acc) ->
+%   compress(delete(H,T), [H|Acc]).
+
+% delete(_, []) ->
+%   [];
+% delete(I, [I|T]) ->
+%   delete(I, T);
+% delete(I, [Ai|T]) ->
+%   [Ai|delete(I, T)].

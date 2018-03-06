@@ -6,14 +6,20 @@
 %%% @end
 %%% Created : 01. Mar 2018 8:38 AM
 %%%-------------------------------------------------------------------
--module(p01).
+-module(p13).
 -author("irishman").
 
 %% API
--export([last/1]).
+-export([decode/1]).
 
 
-last([X]) ->
-  X;
-last([_|T]) ->
-  last(T).
+decode([]) ->
+  [];
+decode([{1,Elem}]) ->
+  [Elem];
+decode([{Count,Elem}]) ->
+  [Elem|decode([{Count-1,Elem}])];
+decode([{1,Elem}|T]) ->
+  [Elem|decode(T)];
+decode([{Count,Elem}|T]) ->
+  [Elem|decode([{Count-1,Elem}|T])].

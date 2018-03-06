@@ -1,5 +1,5 @@
 %%%-------------------------------------------------------------------
-%%% @author irish_man
+%%% @author irishman
 %%% @copyright (C) 2018, <COMPANY>
 %%% @doc
 %%%
@@ -7,12 +7,12 @@
 %%% Created : 01. Mar 2018 10:36 AM
 %%%-------------------------------------------------------------------
 -module(p06).
--author("irish_man").
+-author("irishman").
+-import(p05, [reverse/1]).
 
 %% API
 -export([is_palindrome/1]).
--import(p05, [tail_reverse/1]).
 
 
 is_palindrome(L) ->
-  L =:= tail_reverse(L).
+  L =:= reverse(L).
