@@ -18,7 +18,7 @@ split(BinText, Sep) ->
 
 split(BinText, Sep, Len, IAcc, RAcc) ->
   case BinText of
-    <<Str:Len/binary, Rest/binary>> when Str == Sep, Len /= 0 ->
+    <<Sep:Len/binary, Rest/binary>> ->
       split(Rest, Sep, Len, <<>>, [IAcc|RAcc]);
     <<H, Rest/binary>> ->
       split(Rest, Sep, Len, <<IAcc/binary, H>>, RAcc);

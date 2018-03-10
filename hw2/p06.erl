@@ -11,8 +11,19 @@
 -import(p05, [reverse/1]).
 
 %% API
--export([is_palindrome/1]).
+-export([is_palindrome/1, new_palindrome/1]).
 
 
 is_palindrome(L) ->
   L =:= reverse(L).
+
+
+new_palindrome(L) ->
+  new_palindrome(L,reverse(L)).
+
+new_palindrome([H|T1],[H|T2]) ->
+  new_palindrome(T1,T2);
+new_palindrome([],[]) ->
+  true;
+new_palindrome(_,_) ->
+  false.
