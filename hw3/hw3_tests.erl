@@ -23,3 +23,8 @@ bs02_words_test() ->
 bs03_split_test() ->
   BinText = <<"Col1-:-Col2-:-Col3-:-Col4-:-Col5">>,
   ?assert(bs03:split(BinText, "-:-") =:= [<<"Col1">>, <<"Col2">>, <<"Col3">>, <<"Col4">>, <<"Col5">>]).
+
+bs04_decode_xml_test() ->
+  BinXML = <<"<start><item>Text1</item><item>Text2</item></start>">>,
+  ?assert(bs04:decode_xml(BinXML) =:=  {<<"start">>,[],[{<<"item">>,[],[<<"Text1">>]},{<<"item">>,[],[<<"Text2">>]}]}).
+

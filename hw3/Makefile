@@ -5,7 +5,7 @@
 
 ERL = erl -boot start_clean
 
-MODS = bs01 bs02 bs03 hw3_tests
+MODS = bs01 bs02 bs03 bs04 hw3_tests
 
 all: compile
 
