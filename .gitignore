@@ -3,5 +3,5 @@
 *.beam
 *.plt
 .erlang.mk
-*.erlang.mk
-*.Makefile
+erlang.mk
+Makefile
