@@ -1,15 +1,5 @@
-.SUFFIXES: .erl .beam
+PROJECT = hw3
+PROJECT_DESCRIPTION = New project
+PROJECT_VERSION = 0.1.0
 
-.erl.beam:
-	erlc -W $<
-
-ERL = erl -boot start_clean
-
-MODS = bs01 bs02 bs03 bs04 hw3_tests
-
-all: compile
-
-compile: ${MODS:%=%.beam}
-
-clean:
-	rm -r *.beam *.dump
+include erlang.mk

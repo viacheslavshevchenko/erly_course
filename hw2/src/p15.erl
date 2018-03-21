@@ -21,8 +21,6 @@ replicate([H|T], Count) ->
 replicate([], _, _) ->
   [];
 replicate([_|T], 0, Count) ->
-  % io:format("~p~p~n", [T, Count]),
   replicate(T, Count, Count);
 replicate([H|T], C, Count) ->
-  % io:format("~p~p~p~p~n", [H,T, C, Count]),
   [H|replicate([H|T], C-1, Count)].

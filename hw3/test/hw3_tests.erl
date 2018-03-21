@@ -7,6 +7,7 @@
 %%% Created : 09. Mar 2018 21:15
 %%%-------------------------------------------------------------------
 -module(hw3_tests).
+-ifdef(TEST).
 -author("irishman").
 -include_lib("eunit/include/eunit.hrl").
 
@@ -28,3 +29,4 @@ bs04_decode_xml_test() ->
   BinXML = <<"<start><item>Text1</item><item>Text2</item></start>">>,
   ?assert(bs04:decode_xml(BinXML) =:=  {<<"start">>,[],[{<<"item">>,[],[<<"Text1">>]},{<<"item">>,[],[<<"Text2">>]}]}).
 
+-endif.

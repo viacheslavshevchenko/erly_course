@@ -17,7 +17,7 @@
 is_palindrome(L) ->
   L =:= reverse(L).
 
-
+% New palindrome algoritm
 new_palindrome(L) ->
   new_palindrome(L,reverse(L)).
 

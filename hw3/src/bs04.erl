@@ -32,7 +32,6 @@ tag_header(TagHeader) ->
 
 tag_content(<<"</", Bin1/binary>>, Parent) ->
   Len = size(Parent),
-  <<Parent:Len/binary, ">", Bin/binary>> = Bin1,
   <<Parent:Len/binary, Bin2/binary>> = Bin1,
   <<">", Bin/binary>> = Bin2,
   {[], Bin};
@@ -46,10 +45,10 @@ tag_content(Bin, Parent) ->
   [Text, Rest] = split(Bin, <<"</",Parent/binary,">">>),
   {[Text],Rest}.
 
-
 %%%===================================================================
 %%% Helpers
 %%%===================================================================
+
 split(BinText, Sep) ->
   split(BinText, Sep, length(binary_to_list(Sep)), <<>>).
 

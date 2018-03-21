@@ -1,2 +1,7 @@
 # Exclude ide folder
 .idea/
+*.beam
+*.plt
+.erlang.mk
+*.erlang.mk
+*.Makefile

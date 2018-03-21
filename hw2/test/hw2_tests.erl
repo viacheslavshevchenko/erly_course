@@ -7,9 +7,9 @@
 %%% Created : 01. Mar 2018 8:38 AM
 %%%-------------------------------------------------------------------
 -module(hw2_tests).
+-ifdef(TEST).
 -author("irishman").
 -include_lib("eunit/include/eunit.hrl").
-
 
 %% API
 -export([]).
@@ -68,3 +68,5 @@ p14_duplicate_test() ->
 
 p15_replicate_test() ->
   ?assert(p15:replicate([a,b,c], 3) =:= [a,a,a,b,b,b,c,c,c]).
+
+-endif.
