@@ -5,3 +5,5 @@
 .erlang.mk
 erlang.mk
 Makefile
+logs/
+ebin/
