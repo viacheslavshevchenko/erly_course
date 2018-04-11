@@ -5,3 +5,4 @@
 .erlang.mk
 logs/
 ebin/
+deps/
