@@ -59,8 +59,7 @@ lookup_by_date(DateFrom, DateTo) ->
   MS = ets:fun2ms(fun({Key, Value, Date, _})
     when Date >= DateFrom andalso Date =< DateTo ->
     {Key, Value} end),
-  Value = {ok, ets:select(?MODULE, MS)},
-  {ok, Value}.
+  ets:select(?MODULE, MS).
 
 handle_info(drop_evaluate, State) ->
   FirstKey = ets:first(?MODULE),

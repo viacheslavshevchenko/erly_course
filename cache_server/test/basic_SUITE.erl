@@ -8,20 +8,24 @@
 %%%-------------------------------------------------------------------
 -module(basic_SUITE).
 -include_lib("common_test/include/ct.hrl").
--author("irish_man").
-
-
--export([all/0, insert_to_ets/1, init_per_testcase/1]).
+-compile(export_all).
 
 all() ->
   [
-    insert_to_ets
+    plus,
+    create_cache_server
   ].
 
-init_per_testcase(insert_to_ets) ->
-  cache_server:start_link([{drop_interval, 150}]),
-  ct:sleep(5).
+init_per_testcase(_, _) ->
+  ok.
 
-insert_to_ets(_Config) ->
-  ok = cache_server:insert(test, 1234, 600).
+end_per_testcase(_, _) ->
+  ok.
+
+create_cache_server(_) ->
+  cache_server:start_link([{drop_interval, 600}]).
+
+plus(_) ->
+  2 = 2.
+
 
